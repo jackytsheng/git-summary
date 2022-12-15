@@ -12,7 +12,7 @@ This bash script can generate simple git reports for all git repositories
 ---------------some-frontend-project
    177  jackytsheng <jackytsheng@gmail.com>
     54  Author A <authorA@163.com>
-    53  jackytsheng <jackytsheng@gmail.com>
+    53  jackytsheng <48374842+jackytsheng@users.noreply.github.com>
     35  Author B <authorB@163.com>
      9  unknown <xxxxx@gmail.com>
     17  Frank Yang <fyang@gmail.com>
