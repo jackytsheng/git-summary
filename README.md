@@ -38,7 +38,8 @@ This bash script can generate simple git reports for all git repositories
 
 ## Report Limiting
 
-You can provide optional flags to tailor the report. At the moment it supports specific git message for time frame and/or for specific author. If not specified. Report will print out information for all authors.
+You can provide optional flags to tailor the report. At the moment it supports specific git message for time frame and/or for specific author. If not specified, report will be printed out for all authors
+
 
 ```bash
 # -s: since
@@ -46,7 +47,6 @@ You can provide optional flags to tailor the report. At the moment it supports s
 
 
 # Output
-
 flag --since 01 Dec 2020 specified
 ---------------some-small-project
     31  jackytsheng <jackytsheng@gmail.com>
@@ -57,12 +57,13 @@ flag --since 01 Dec 2020 specified
      0  commits, 0  files changed, 0  insertions(+), 0  deletions(-)
 ```
 
+
 ```bash
 # -b: before
 ./git-summary.sh -s "10 Dec 2021" -b "10 Jan 2022"
 
-# Output 2
 
+# Output
 flag --since 01 Dec 2020 specified
 ---------------some-small-project
      0  commits, 0  files changed, 0  insertions(+), 0  deletions(-)
@@ -78,11 +79,13 @@ flag --since 01 Dec 2020 specified
    237  commits, 1310  files changed, 17009  insertions(+), 9997  deletions(-)
 ```
 
+
 ```bash
 # -a: author
 ./git-summary.sh -s "10 Dec 2021" -b "10 Dec 2022" -a Jacky
 
-# Ouput
+
+# Output
 flag --since 01 Dec 2020 specified
 ---------------some-small-project
      0  commits, 0  files changed, 0  insertions(+), 0  deletions(-)
@@ -95,7 +98,7 @@ flag --since 01 Dec 2020 specified
 
 ## Optional Flags Table
 
-Under the hood, it uses `git log` to generate the report, so optional flag provided will be converted to flags that limit `git log`. See [Commit Limiting](https://git-scm.com/docs/git-log#_commit_limiting) for more detail.
+Under the hood, it uses `git log` to generate the report, so optional flag provided will be converted to flags that limit `git log`. See [Commit Limiting](https://git-scm.com/docs/git-log#_commit_limiting) for more detail
 
 | optional flags | `git log` flags equivalent |
 | -------------- | -------------------------- |
