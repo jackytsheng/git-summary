@@ -5,7 +5,7 @@ bflag=
 aflag=
 args=()
 
-while getopts "s:b:a:" flag
+while getopts ":s:b:a:" flag
 do
 case $flag in
     s)    sflag=1
@@ -21,15 +21,15 @@ done
 shift $((OPTIND -1))
 
 if [ ! -z "$sflag" ]; then
-	args+=('--since="$since"')
+	args+="--since=\"$since\" "
 	echo "flag --since $since specified"
 fi
 if [ ! -z "$bflag" ]; then
-	args+=('--before="$before"')
+	args+="--before=\"$before\" "
 	echo "flag --before $before specified"
 fi
 if [ ! -z "$aflag" ]; then
-	args+=('--author="$author"')
+	args+="--author=\"$author\" "
 	echo "flag --author $author specified"
 fi
 
@@ -40,8 +40,8 @@ if [[ $? -eq 0 ]]
 	then
 		cd $dir 
 		echo "---------------${dir///}"
-		git shortlog -sne ${args[@]}
-		git log --shortstat ${args[@]}| awk '/^ [0-9]|^A/ {
+		git shortlog -sne ${since:+--since "$since"} ${before:+--before "$before"} ${author:+--author "$author"}
+		git log --shortstat ${since:+--since "$since"} ${before:+--before "$before"} ${author:+--author "$author"} | awk '/^ [0-9]|^A/ {
 	if($1=="Author:") 
 		c += 1;
 	else 
