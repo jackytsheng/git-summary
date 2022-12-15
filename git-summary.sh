@@ -3,7 +3,6 @@
 sflag=
 bflag=
 aflag=
-args=()
 
 while getopts ":s:b:a:" flag
 do
@@ -21,15 +20,12 @@ done
 shift $((OPTIND -1))
 
 if [ ! -z "$sflag" ]; then
-	args+="--since=\"$since\" "
 	echo "flag --since $since specified"
 fi
 if [ ! -z "$bflag" ]; then
-	args+="--before=\"$before\" "
 	echo "flag --before $before specified"
 fi
 if [ ! -z "$aflag" ]; then
-	args+="--author=\"$author\" "
 	echo "flag --author $author specified"
 fi
 
