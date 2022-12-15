@@ -1,8 +1,10 @@
 # Lightweight Git Summary Script
 
-This bash script can generate simple git reports for all git repositories that you have as the following
+This bash script can generate simple git reports for all git repositories
+
 
 ```
+# Report Example
 ---------------some-small-project
      6  jackytsheng <jackytsheng@gmail.com>
      6  commits, 13  files changed, 307  insertions(+), 1  deletions(-)
@@ -19,7 +21,7 @@ This bash script can generate simple git reports for all git repositories that y
 
 ## How to use it ?
 
-1. Clone repo or download `git-summary.sh`
+1. Clone this project repo or simply download the `git-summary.sh`
 2. Move the script to the same directory level that consists all other repositories
 
 ```
@@ -100,3 +102,6 @@ Under the hood, it uses `git log` to generate the report, so optional flag provi
 | -s             | --since                    |
 | -b             | --before                   |
 | -a             | --author                   |
+
+## Footnote
+If you find this useful please give a ⭐️. Much appreciate. Welcome any feedback or suggestion
